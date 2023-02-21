@@ -3,4 +3,4 @@ Proyectos donde realizaba algunos robots con fines escolares realizados en el pe
 
 # Proyectos
 [Simil de brazo robot](Brazo%20robot/README.md)
-[Robot que resuelve laberinto](Robot%20autonomo%20que%20resuelve%20laberinto/README.md)
+[Robot que resuelve laberinto](Robot%20autonomo%20que%20resuelve%20laberintos/README.md)
