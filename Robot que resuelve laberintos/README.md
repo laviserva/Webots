@@ -12,7 +12,8 @@ Dentro de esta carpeta están los siguientes archivos con su propia funcionalida
 # Funciones
 ### librería
 **Traslación**
-    * *desplazamiento*: desplaza el robot
+
+ * *desplazamiento*: desplaza el robot
     * *detener_base*: detiene la rotación de la base
     * *detener_eslabon_1*: detiene la rotación del eslabon 1
     * *detener_eslabon_2*: detiene la rotación del eslabon 2
