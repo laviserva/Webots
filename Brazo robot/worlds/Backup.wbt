@@ -1,0 +1,475 @@
+#VRML_SIM R2021b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation 0.9926170139326159 -0.11509736084721692 -0.03826305238088615 6.009437297088942
+  position -0.008684503608080233 0.2963160951020059 0.6917057150129612
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+DEF Robot_Brazo Robot {
+  translation 0 0.038 0
+  children [
+    DEF Base_Robot HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 -1 0
+        anchor 0 0.028 0
+      }
+      device [
+        PositionSensor {
+          name "Encoder_Base"
+        }
+        RotationalMotor {
+          name "Motor_Base"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.028 0
+        rotation 0 -1 0 0
+        children [
+          DEF Art_eslabones_1 Transform {
+            translation 0 0.01 0
+            children [
+              DEF Art_eslabones_1 Shape {
+                appearance PBRAppearance {
+                  baseColor 0.666667 0 1
+                }
+                geometry Sphere {
+                  radius 0.016
+                }
+              }
+            ]
+          }
+          DEF Eslabon_1 Hinge2Joint {
+            jointParameters HingeJointParameters {
+              axis -1 0 0
+              anchor 0 0.01 0
+            }
+            jointParameters2 JointParameters {
+              axis 0 0 -1
+            }
+            device [
+              DEF Motor_Eslabon_1 RotationalMotor {
+                name "Motor_Eslabon_1_x"
+              }
+              DEF Encoder_Eslabon_1 PositionSensor {
+                name "Encoder_Eslabon_1_x"
+              }
+            ]
+            device2 [
+              DEF Motor_Eslabon_1_z RotationalMotor {
+                name "Motor_Eslabon_1_z"
+              }
+              DEF Encoder_Eslabon_1_z PositionSensor {
+                name "Encoder_Eslabon_1_z"
+              }
+            ]
+            endPoint Solid {
+              translation 0 0.07 0
+              children [
+                DEF Art_escalones_2 HingeJoint {
+                  jointParameters HingeJointParameters {
+                    anchor 0 0.06 0
+                  }
+                  device [
+                    RotationalMotor {
+                      name "Motor_Esfera_2"
+                    }
+                  ]
+                  endPoint Solid {
+                    translation 0 0.06 0
+                    rotation 1 0 0 0
+                    children [
+                      DEF Eslabon_2 Hinge2Joint {
+                        jointParameters HingeJointParameters {
+                        }
+                        jointParameters2 JointParameters {
+                        }
+                        device [
+                          RotationalMotor {
+                            name "Motor_Eslabon_2_x"
+                          }
+                          DEF Encoder_Eslabon_1_x PositionSensor {
+                            name "Encoder_Eslabon_2_x"
+                          }
+                        ]
+                        device2 [
+                          DEF Encoder_Eslabon_2_z PositionSensor {
+                            name "Encoder_Eslabon_2_z"
+                          }
+                          RotationalMotor {
+                            name "Motor_Eslabon_2_z"
+                          }
+                        ]
+                        endPoint Solid {
+                          translation 0 0.06 0
+                          children [
+                            DEF Muesca Transform {
+                              translation -0.016 0 0
+                              children [
+                                DEF Muesca Shape {
+                                  appearance PBRAppearance {
+                                    baseColor 0 0 1
+                                  }
+                                  geometry Box {
+                                    size 0.001 0.1 0.005
+                                  }
+                                }
+                              ]
+                            }
+                            DEF Eslabon_2 Shape {
+                              appearance PBRAppearance {
+                                baseColor 0.666667 0 1
+                              }
+                              geometry Cylinder {
+                                height 0.1
+                                radius 0.016
+                              }
+                            }
+                          ]
+                          boundingObject DEF Eslabon_2 Shape {
+                            appearance PBRAppearance {
+                              baseColor 0.666667 0 1
+                            }
+                            geometry Cylinder {
+                              height 0.1
+                              radius 0.016
+                            }
+                          }
+                          physics Physics {
+                          }
+                        }
+                      }
+                      DEF Art_eslabones_2 Shape {
+                        appearance PBRAppearance {
+                          baseColor 0.666667 0 1
+                        }
+                        geometry Sphere {
+                          radius 0.016
+                        }
+                      }
+                    ]
+                    boundingObject USE Art_eslabones_2
+                    physics Physics {
+                    }
+                    recognitionColors [
+                      0 0 0
+                    ]
+                  }
+                }
+                DEF Eslabon_1 Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.666667 0 1
+                  }
+                  geometry Cylinder {
+                    height 0.1
+                    radius 0.016
+                  }
+                }
+                DEF Muesca Transform {
+                  translation -0.016 0 0
+                  children [
+                    DEF Muesca Shape {
+                      appearance PBRAppearance {
+                        baseColor 0 0 1
+                      }
+                      geometry Box {
+                        size 0.001 0.1 0.005
+                      }
+                    }
+                  ]
+                }
+              ]
+              name "solid(7)"
+              boundingObject USE Eslabon_1
+              physics Physics {
+              }
+            }
+          }
+          DEF Base_Robot Shape {
+            appearance PBRAppearance {
+              baseColor 0.666667 0 0.498039
+            }
+            geometry Cylinder {
+              height 0.005
+              radius 0.06
+              subdivision 6
+            }
+          }
+        ]
+        boundingObject USE Base_Robot
+        physics Physics {
+        }
+      }
+    }
+    DEF Rueda_1 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis -1 0 -1
+        anchor -0.075 -0.013 -0.075
+      }
+      device [
+        DEF Encoder_1 PositionSensor {
+          name "Encoder_1"
+        }
+        DEF Motor_1 RotationalMotor {
+          name "Motor_1"
+        }
+      ]
+      endPoint Solid {
+        translation -0.075 -0.013 -0.075
+        rotation 0.7071067811865475 0 -0.7071067811865475 1.5709432612018914
+        children [
+          DEF Muesca Transform {
+            rotation 0 1 0 -0.7853996938995746
+            children [
+              DEF Muesca Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                }
+                geometry Box {
+                  size 0.048 0.0105 0.01
+                }
+              }
+              DEF Parte_Superior Transform {
+                translation -0.019 0 0
+                children [
+                  DEF Parte_Superior Shape {
+                    appearance PBRAppearance {
+                      baseColor 0 0.333333 0
+                    }
+                    geometry Box {
+                      size 0.01051 0.01051 0.011
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+          DEF RDI Shape {
+            appearance PBRAppearance {
+              baseColor 0.666667 0 1
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        name "solid(3)"
+        boundingObject USE RDI
+        physics Physics {
+        }
+      }
+    }
+    DEF Rueda_2 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis -1 0 1
+        anchor 0.075 -0.013 -0.075
+      }
+      device [
+        DEF Encoder_2 PositionSensor {
+          name "Encoder_2"
+        }
+        DEF Motor_2 RotationalMotor {
+          name "Motor_2"
+        }
+      ]
+      endPoint Solid {
+        translation 0.075 -0.013 -0.075
+        rotation 0.7071067811865475 0 0.7071067811865475 1.5707996938995747
+        children [
+          DEF Muesca Transform {
+            rotation 0 1 0 -2.3562003061004253
+            children [
+              DEF Muesca Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                }
+                geometry Box {
+                  size 0.048 0.0105 0.01
+                }
+              }
+              DEF Parte_Superior Transform {
+                translation -0.019 0 0
+                children [
+                  DEF Parte_Superior Shape {
+                    appearance PBRAppearance {
+                      baseColor 0 0.333333 0
+                    }
+                    geometry Box {
+                      size 0.01051 0.01051 0.011
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+          DEF RDI Shape {
+            appearance PBRAppearance {
+              baseColor 0.666667 0 1
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        name "solid(2)"
+        boundingObject USE RDI
+        physics Physics {
+        }
+      }
+    }
+    DEF Rueda_3 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis -1 0 1
+        anchor -0.075 -0.013 0.075
+      }
+      device [
+        DEF Encoder_3 PositionSensor {
+          name "Encoder_3"
+        }
+        DEF Motor_3 RotationalMotor {
+          name "Motor_3"
+        }
+      ]
+      endPoint Solid {
+        translation -0.075 -0.013 0.075
+        rotation 0.7071066717798298 0 0.7071068905932484 1.5707996938995747
+        children [
+          DEF Muesca Transform {
+            rotation 0 1 0 -2.3561996938995744
+            children [
+              DEF Muesca Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                }
+                geometry Box {
+                  size 0.048 0.0105 0.01
+                }
+              }
+              DEF Parte_Superior Transform {
+                translation -0.019 0 0
+                children [
+                  DEF Parte_Superior Shape {
+                    appearance PBRAppearance {
+                      baseColor 0 0.333333 0
+                    }
+                    geometry Box {
+                      size 0.01051 0.01051 0.011
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+          DEF RDI Shape {
+            appearance PBRAppearance {
+              baseColor 0.666667 0 1
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        name "solid(5)"
+        boundingObject USE RDI
+        physics Physics {
+        }
+      }
+    }
+    DEF Rueda_4 HingeJoint {
+      jointParameters HingeJointParameters {
+        axis -1 0 -1
+        anchor 0.075 -0.013 0.075
+      }
+      device [
+        DEF Encoder_4 PositionSensor {
+          name "Encoder_4"
+        }
+        DEF Motor_4 RotationalMotor {
+          name "Motor_4"
+        }
+      ]
+      endPoint Solid {
+        translation 0.075 -0.013 0.075
+        rotation 0.7071067811865476 0 -0.7071067811865476 1.5707999999999998
+        children [
+          DEF Muesca Transform {
+            rotation 0 1 0 -0.7853996938995746
+            children [
+              DEF Muesca Shape {
+                appearance PBRAppearance {
+                  baseColor 1 0 0
+                }
+                geometry Box {
+                  size 0.048 0.0105 0.01
+                }
+              }
+              DEF Parte_Superior Transform {
+                translation -0.019 0 0
+                children [
+                  DEF Parte_Superior Shape {
+                    appearance PBRAppearance {
+                      baseColor 0 0.333333 0
+                    }
+                    geometry Box {
+                      size 0.01051 0.01051 0.011
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+          DEF RDI Shape {
+            appearance PBRAppearance {
+              baseColor 0.666667 0 1
+            }
+            geometry Cylinder {
+              height 0.01
+              radius 0.025
+            }
+          }
+        ]
+        name "solid(1)"
+        boundingObject USE RDI
+        physics Physics {
+        }
+      }
+    }
+    DEF Cuerpo Transform {
+      children [
+        DEF Cuerpo_mesh Shape {
+          appearance PBRAppearance {
+          }
+          geometry Box {
+            size 0.14 0.05 0.14
+          }
+        }
+        DEF Muesca_Cuerpo Transform {
+          translation -0.06 0 -0.06
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.666667 0 0
+              }
+              geometry Box {
+                size 0.01 0.051 0.01
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  boundingObject USE Cuerpo_mesh
+  physics Physics {
+  }
+  controller "RobotBasico"
+}
